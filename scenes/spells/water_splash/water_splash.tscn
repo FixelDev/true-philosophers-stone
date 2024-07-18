@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://clxd8dlyc3gq0"]
+
+[ext_resource type="PackedScene" uid="uid://csmohuvrc6ifj" path="res://scenes/spells/spell.tscn" id="1_tblto"]
+[ext_resource type="Script" path="res://scenes/spells/water_splash/water_splash.gd" id="2_tkn7t"]
+
+[node name="WaterSplash" instance=ExtResource("1_tblto")]
+script = ExtResource("2_tkn7t")

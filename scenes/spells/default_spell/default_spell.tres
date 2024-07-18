@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpellStats" load_steps=2 format=3 uid="uid://cnhtj0b0dwf7k"]
+
+[ext_resource type="Script" path="res://scenes/spells/spell_stats.gd" id="1_0p8el"]
+
+[resource]
+script = ExtResource("1_0p8el")
+id = "default_spell"
+spell_name = "Default Spell"
+damage = 1
+cooldown = 0.5

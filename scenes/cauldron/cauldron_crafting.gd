@@ -30,5 +30,6 @@ func craft_spell() -> void:
 			break
 			
 	print("Crafted" + crafted_spell_id)
+	SpellDatabase.add_new_spell(crafted_spell_id)
 	ingredients_container.available_ingredients.clear()
 

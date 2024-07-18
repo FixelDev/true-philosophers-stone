@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpellStats" load_steps=2 format=3 uid="uid://du31sk7ujjgs0"]
+
+[ext_resource type="Script" path="res://scenes/spells/spell_stats.gd" id="1_5pw2w"]
+
+[resource]
+script = ExtResource("1_5pw2w")
+id = "fireball"
+spell_name = "Fireball"
+damage = 5
+cooldown = 1.0

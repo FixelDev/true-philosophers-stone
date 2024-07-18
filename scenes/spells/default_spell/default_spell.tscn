@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs0l7q0psqxoo"]
+
+[ext_resource type="PackedScene" uid="uid://csmohuvrc6ifj" path="res://scenes/spells/spell.tscn" id="1_telit"]
+[ext_resource type="Script" path="res://scenes/spells/default_spell/default_spell.gd" id="2_84ioy"]
+
+[node name="DefaultSpell" instance=ExtResource("1_telit")]
+script = ExtResource("2_84ioy")

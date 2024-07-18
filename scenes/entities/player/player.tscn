@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhk8drb6381j7"]
+[gd_scene load_steps=7 format=3 uid="uid://bhk8drb6381j7"]
 
 [ext_resource type="Texture2D" uid="uid://b2bn3cv0ifdmm" path="res://icon.svg" id="1_dkgoo"]
 [ext_resource type="Script" path="res://scenes/entities/player/player.gd" id="1_y5i55"]
+[ext_resource type="Script" path="res://scenes/entities/player/player_spell_manager.gd" id="3_34qf2"]
+[ext_resource type="Script" path="res://scenes/entities/player/spellbook.gd" id="4_g5dfx"]
+[ext_resource type="PackedScene" uid="uid://cs0l7q0psqxoo" path="res://scenes/spells/default_spell/default_spell.tscn" id="5_gv243"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y3jfr"]
 radius = 79.177
@@ -15,3 +18,12 @@ shape = SubResource("CircleShape2D_y3jfr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_dkgoo")
+
+[node name="PlayerSpellManager" type="Node2D" parent="."]
+script = ExtResource("3_34qf2")
+
+[node name="Spellbook" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_g5dfx")
+
+[node name="DefaultSpell" parent="Spellbook" instance=ExtResource("5_gv243")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cososf1t7dm8"]
+[gd_scene load_steps=12 format=3 uid="uid://cososf1t7dm8"]
 
 [ext_resource type="PackedScene" uid="uid://caomwo0h5ydsq" path="res://scenes/ui/ui.tscn" id="1_aqg43"]
 [ext_resource type="Texture2D" uid="uid://b2bn3cv0ifdmm" path="res://icon.svg" id="2_0lsof"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bo8l6iintwsmk" path="res://scenes/ingredients_container.tscn" id="5_benhy"]
 [ext_resource type="PackedScene" uid="uid://5h6qpu67sl1" path="res://scenes/cauldron/recipe_list_item.tscn" id="5_mexgv"]
 [ext_resource type="Script" path="res://scenes/cauldron/recipe_details.gd" id="6_ohfnr"]
+[ext_resource type="PackedScene" uid="uid://c5dkdfaw4o8pw" path="res://scenes/ui/exit_button.tscn" id="7_kq343"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_os6cp"]
 radius = 78.1025
@@ -87,6 +88,8 @@ layout_mode = 1
 offset_right = 42.0
 offset_bottom = 36.0
 text = "return"
+
+[node name="ExitButton" parent="UI" instance=ExtResource("7_kq343")]
 
 [node name="CauldronCrafting" type="Area2D" parent="."]
 position = Vector2(547, 372)

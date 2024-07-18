@@ -64,8 +64,3 @@ func is_ingredient_already_picked(id: String) -> bool:
 			
 	return false
 
-	
-
-
-func _on_exit_button_pressed():
-	SceneManager.change_scene_by_path("res://scenes/starting_level.tscn")
