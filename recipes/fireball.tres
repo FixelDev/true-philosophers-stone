@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=2 format=3 uid="uid://s78tf0x0ha4v"]
+
+[ext_resource type="Script" path="res://recipes/recipe.gd" id="1_22554"]
+
+[resource]
+script = ExtResource("1_22554")
+id = "fireball"
+name = "Fireball"
+price = 10
+required_ingredients = {}

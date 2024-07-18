@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=2 format=3 uid="uid://beosq4r4mlwba"]
+
+[ext_resource type="Script" path="res://ingredients/ingredient.gd" id="1_ab4h2"]
+
+[resource]
+script = ExtResource("1_ab4h2")
+id = "air"
+name = "Air"
+price = 2

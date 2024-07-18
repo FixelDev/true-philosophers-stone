@@ -1,0 +1,107 @@
+[gd_scene load_steps=3 format=3 uid="uid://caomwo0h5ydsq"]
+
+[ext_resource type="Texture2D" uid="uid://b2bn3cv0ifdmm" path="res://icon.svg" id="1_g6ibf"]
+[ext_resource type="Texture2D" uid="uid://d0vxl23tk0si4" path="res://graphics/border.png" id="2_g0kke"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainBar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 74.0
+grow_horizontal = 2
+
+[node name="Lives" type="HBoxContainer" parent="MainBar"]
+layout_mode = 2
+
+[node name="Heart" type="TextureRect" parent="MainBar/Lives"]
+modulate = Color(0.629611, 0, 0.298764, 1)
+layout_mode = 2
+texture = ExtResource("1_g6ibf")
+expand_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="MainBar/Lives"]
+modulate = Color(0.629611, 0, 0.298764, 1)
+layout_mode = 2
+texture = ExtResource("1_g6ibf")
+expand_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="MainBar/Lives"]
+modulate = Color(0.629611, 0, 0.298764, 1)
+layout_mode = 2
+texture = ExtResource("1_g6ibf")
+expand_mode = 2
+
+[node name="Ingredients" type="HBoxContainer" parent="MainBar"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+
+[node name="FireAmount" type="HBoxContainer" parent="MainBar/Ingredients"]
+layout_mode = 2
+
+[node name="AmountText" type="Label" parent="MainBar/Ingredients/FireAmount"]
+layout_mode = 2
+text = "50 x"
+
+[node name="Image" type="TextureRect" parent="MainBar/Ingredients/FireAmount"]
+layout_mode = 2
+texture = ExtResource("2_g0kke")
+expand_mode = 2
+
+[node name="WaterAmount" type="HBoxContainer" parent="MainBar/Ingredients"]
+layout_mode = 2
+
+[node name="AmountText" type="Label" parent="MainBar/Ingredients/WaterAmount"]
+layout_mode = 2
+text = "50 x"
+
+[node name="FireImage" type="TextureRect" parent="MainBar/Ingredients/WaterAmount"]
+layout_mode = 2
+texture = ExtResource("2_g0kke")
+expand_mode = 2
+
+[node name="EarthAmount" type="HBoxContainer" parent="MainBar/Ingredients"]
+layout_mode = 2
+
+[node name="AmountText" type="Label" parent="MainBar/Ingredients/EarthAmount"]
+layout_mode = 2
+text = "50 x"
+
+[node name="Image" type="TextureRect" parent="MainBar/Ingredients/EarthAmount"]
+layout_mode = 2
+texture = ExtResource("2_g0kke")
+expand_mode = 2
+
+[node name="AirAmount" type="HBoxContainer" parent="MainBar/Ingredients"]
+layout_mode = 2
+
+[node name="AmountText" type="Label" parent="MainBar/Ingredients/AirAmount"]
+layout_mode = 2
+text = "50 x"
+
+[node name="Image" type="TextureRect" parent="MainBar/Ingredients/AirAmount"]
+layout_mode = 2
+texture = ExtResource("2_g0kke")
+expand_mode = 2
+
+[node name="Coins" type="HBoxContainer" parent="MainBar"]
+layout_mode = 2
+
+[node name="CoinsAmount" type="HBoxContainer" parent="MainBar/Coins"]
+layout_mode = 2
+
+[node name="AmountText" type="Label" parent="MainBar/Coins/CoinsAmount"]
+layout_mode = 2
+text = "50 x"
+
+[node name="Image" type="TextureRect" parent="MainBar/Coins/CoinsAmount"]
+layout_mode = 2
+texture = ExtResource("2_g0kke")
+expand_mode = 2

@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3ymcumcpvkko"]
+
+[ext_resource type="Script" path="res://scenes/shop/shop.gd" id="1_22a4g"]
+[ext_resource type="PackedScene" uid="uid://caomwo0h5ydsq" path="res://scenes/ui.tscn" id="1_ctq1t"]
+
+[node name="Shop" type="Control" node_paths=PackedStringArray("recipe_slot", "ingredient_slots")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_22a4g")
+recipe_slot = NodePath("Table/ItemSlots/RecipeSlot")
+ingredient_slots = [NodePath("Table/ItemSlots/IngredientSlot"), NodePath("Table/ItemSlots/IngredientSlot2"), NodePath("Table/ItemSlots/IngredientSlot3")]
+
+[node name="UI" parent="." instance=ExtResource("1_ctq1t")]
+layout_mode = 1
+
+[node name="Table" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -351.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="ItemSlots" type="HBoxContainer" parent="Table"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -111.5
+offset_bottom = 111.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RecipeSlot" type="Button" parent="Table/ItemSlots"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IngredientSlot" type="Button" parent="Table/ItemSlots"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IngredientSlot2" type="Button" parent="Table/ItemSlots"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IngredientSlot3" type="Button" parent="Table/ItemSlots"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="Table/ItemSlots/RecipeSlot" to="." method="_on_recipe_slot_pressed"]

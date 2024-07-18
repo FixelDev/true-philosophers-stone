@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3ymcumcpvkko"]
+
+[ext_resource type="Script" path="res://scenes/shop/shop.gd" id="1_22a4g"]
+[ext_resource type="PackedScene" uid="uid://caomwo0h5ydsq" path="res://scenes/ui.tscn" id="1_ctq1t"]
+[ext_resource type="Resource" uid="uid://s78tf0x0ha4v" path="res://recipes/fireball.tres" id="2_36rb1"]
+[ext_resource type="Resource" uid="uid://dwgetwxof4grb" path="res://recipes/water_splash.tres" id="3_t8a0o"]
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_22a4g")
+recipes = Array[Resource("res://recipes/recipe.gd")]([ExtResource("2_36rb1"), ExtResource("3_t8a0o")])
+
+[node name="UI" parent="." instance=ExtResource("1_ctq1t")]
+layout_mode = 1
+
+[node name="Table" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -351.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="ItemSlots" type="HBoxContainer" parent="Table"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -111.5
+offset_bottom = 111.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RecipeSlot" type="Button" parent="Table/ItemSlots"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IngredientSlot" type="Button" parent="Table/ItemSlots"]
+layout_mode = 2
+size_flags_horizontal = 3

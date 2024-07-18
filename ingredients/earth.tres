@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=2 format=3 uid="uid://ifp3uioa5y63"]
+
+[ext_resource type="Script" path="res://ingredients/ingredient.gd" id="1_t8vb3"]
+
+[resource]
+script = ExtResource("1_t8vb3")
+id = "earth"
+name = "Earth"
+price = 2

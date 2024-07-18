@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=2 format=3 uid="uid://dwgetwxof4grb"]
+
+[ext_resource type="Script" path="res://recipes/recipe.gd" id="1_tctx8"]
+
+[resource]
+script = ExtResource("1_tctx8")
+id = "water_splash"
+name = "Water Splash"
+price = 10
