@@ -65,10 +65,7 @@ func is_ingredient_already_picked(id: String) -> bool:
 	return false
 
 
-#func _on_recipe_slot_pressed() -> void:
-	#if Globals.coins < randomized_recipe.price:
-		#return
-		
-	#recipe_slot.text = "SOLD"
-	#recipe_slot.disabled = true
-	#SignalManager.recipe_bought.emit(randomized_recipe.id)
+
+func _on_exit_button_pressed():
+	print("Ss")
+	SceneManager.change_scene("res://scenes/starting_level.tscn")

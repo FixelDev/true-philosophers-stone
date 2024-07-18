@@ -21,6 +21,7 @@ Globals="*res://scripts/globals.gd"
 IngredientsDatabase="*res://ingredients/ingredients_database.tscn"
 RecipesDatabase="*res://recipes/recipes_database.tscn"
 SignalManager="*res://scripts/signal_manager.tscn"
+SceneManager="*res://scenes/scene_manager.tscn"
 
 [input]
 
