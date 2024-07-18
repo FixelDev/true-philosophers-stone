@@ -1,10 +1,10 @@
-extends Resource
+extends Item
 
 class_name Recipe
 
 
-@export var id: String
-@export var name: String
-@export var price: int
-
 @export var required_ingredients: Dictionary
+
+
+func get_item_type() -> Globals.ItemType:
+	return Globals.ItemType.RECIPE

@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://d0xhd4jjp3vmx"]
+
+[node name="ShopSlot" type="Button"]
+size_flags_horizontal = 3

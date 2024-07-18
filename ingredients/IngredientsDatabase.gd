@@ -9,6 +9,7 @@ func get_ingredient(id: String) -> Ingredient:
 			return ingredient
 	return null
 
+
 func get_random_ingredient() -> Ingredient:
 	return ingredients.pick_random()
 

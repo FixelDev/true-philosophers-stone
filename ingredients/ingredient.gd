@@ -1,7 +1,7 @@
-extends Resource
+extends Item
 
 class_name Ingredient
 
-@export var id: String
-@export var name: String
-@export var price: int
+
+func get_item_type() -> Globals.ItemType:
+	return Globals.ItemType.INGREDIENT
