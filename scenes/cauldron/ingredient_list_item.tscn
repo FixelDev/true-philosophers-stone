@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx7fykus4gia5"]
+
+[ext_resource type="Script" path="res://scenes/cauldron/ingredient_list_item.gd" id="1_sw0dp"]
+
+[node name="IngredientListItem" type="Button"]
+custom_minimum_size = Vector2(0, 70)
+script = ExtResource("1_sw0dp")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

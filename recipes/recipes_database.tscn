@@ -1,9 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://f04eymqsh3x5"]
+[gd_scene load_steps=5 format=3 uid="uid://f04eymqsh3x5"]
 
 [ext_resource type="Script" path="res://recipes/recipes_database.gd" id="1_dceee"]
 [ext_resource type="Resource" uid="uid://s78tf0x0ha4v" path="res://recipes/fireball.tres" id="2_4h7f2"]
 [ext_resource type="Resource" uid="uid://dwgetwxof4grb" path="res://recipes/water_splash.tres" id="3_7w6wg"]
+[ext_resource type="Resource" uid="uid://miws3jbhpy8" path="res://recipes/fire_rain.tres" id="4_3n2h5"]
 
 [node name="RecipesDatabase" type="Node"]
 script = ExtResource("1_dceee")
-recipes = Array[Resource("res://recipes/recipe.gd")]([ExtResource("2_4h7f2"), ExtResource("3_7w6wg")])
+recipes = Array[Resource("res://recipes/recipe.gd")]([ExtResource("2_4h7f2"), ExtResource("3_7w6wg"), ExtResource("4_3n2h5")])
+unlocked_recipe_ids = Array[String](["fireball", "water_splash", "fire_rain"])

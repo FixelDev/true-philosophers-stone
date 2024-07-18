@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=2 format=3 uid="uid://miws3jbhpy8"]
+
+[ext_resource type="Script" path="res://recipes/recipe.gd" id="1_q5nkw"]
+
+[resource]
+script = ExtResource("1_q5nkw")
+required_ingredients = {
+"fire": 2,
+"water": 2
+}
+id = "fire_rain"
+name = "Fire Rain"
+price = 25

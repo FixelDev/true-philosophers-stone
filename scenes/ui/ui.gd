@@ -5,8 +5,9 @@ extends CanvasLayer
 @export var coins_ui: Label
 
 
+
 func _ready() -> void:		
-	IngredientsDatabase.ingredients_amount_changed.connect(_on_ingredients_amount_changed)
+	IngredientsDatabase.ingredients_container.ingredients_amount_changed.connect(_on_ingredients_amount_changed)
 	Globals.coins_amount_changed.connect(_on_coins_amount_changed)
 	
 	_on_coins_amount_changed()
@@ -15,7 +16,7 @@ func _ready() -> void:
 		_on_ingredients_amount_changed(id)
 
 func _on_ingredients_amount_changed(id: String):
-	get_node(ingredients_ui[id]).text = str(IngredientsDatabase.get_available_ingredient_amount(id)) + "x "
+	get_node(ingredients_ui[id]).text = str(IngredientsDatabase.ingredients_container.get_available_ingredient_amount(id)) + "x "
 
 
 func _on_coins_amount_changed():

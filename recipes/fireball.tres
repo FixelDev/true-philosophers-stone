@@ -4,7 +4,9 @@
 
 [resource]
 script = ExtResource("1_22554")
+required_ingredients = {
+"fire": 2
+}
 id = "fireball"
 name = "Fireball"
 price = 10
-required_ingredients = {}

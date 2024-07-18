@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://5h6qpu67sl1"]
+
+[ext_resource type="Script" path="res://scenes/cauldron/recipe_list_item.gd" id="1_oig80"]
+
+[node name="RecipeListItem" type="Button"]
+script = ExtResource("1_oig80")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -4,6 +4,9 @@
 
 [resource]
 script = ExtResource("1_tctx8")
+required_ingredients = {
+"water": 2
+}
 id = "water_splash"
 name = "Water Splash"
 price = 10

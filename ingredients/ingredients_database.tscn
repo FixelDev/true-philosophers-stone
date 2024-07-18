@@ -1,11 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://bscadan75lj7e"]
+[gd_scene load_steps=7 format=3 uid="uid://bscadan75lj7e"]
 
 [ext_resource type="Script" path="res://ingredients/IngredientsDatabase.gd" id="1_p77ws"]
 [ext_resource type="Resource" uid="uid://beosq4r4mlwba" path="res://ingredients/air.tres" id="2_cru6v"]
 [ext_resource type="Resource" uid="uid://ifp3uioa5y63" path="res://ingredients/earth.tres" id="3_aesbi"]
 [ext_resource type="Resource" uid="uid://0566kj4qbrok" path="res://ingredients/fire.tres" id="4_pwb0y"]
 [ext_resource type="Resource" uid="uid://dlrdwyg5j8mvj" path="res://ingredients/water.tres" id="5_di84j"]
+[ext_resource type="PackedScene" uid="uid://bo8l6iintwsmk" path="res://scenes/ingredients_container.tscn" id="6_cicpl"]
 
 [node name="IngredientsDatabase" type="Node"]
 script = ExtResource("1_p77ws")
 ingredients = Array[Resource("res://ingredients/ingredient.gd")]([ExtResource("2_cru6v"), ExtResource("3_aesbi"), ExtResource("4_pwb0y"), ExtResource("5_di84j")])
+
+[node name="IngredientsContainer" parent="." instance=ExtResource("6_cicpl")]
+available_ingredients = {
+"earth": 10,
+"fire": 10,
+"water": 5
+}

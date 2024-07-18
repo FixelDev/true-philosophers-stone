@@ -2,7 +2,7 @@ extends Node
 
 @export var recipes: Array[Recipe]
 
-var unlocked_recipe_ids: Array[String]
+@export var unlocked_recipe_ids: Array[String]
 
 
 func _ready() -> void:
@@ -15,7 +15,8 @@ func get_recipe(id: String) -> Recipe:
 			return recipe
 			
 	return null
-	
+
+
 func get_random_recipe() -> Recipe:
 	return recipes.pick_random()
 

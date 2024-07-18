@@ -43,7 +43,7 @@ func _on_slot_pressed() -> void:
 		Globals.ItemType.RECIPE:
 			RecipesDatabase.unlock_recipe(item.id)
 		Globals.ItemType.INGREDIENT:
-			IngredientsDatabase.add_ingredient(item.id, 1)
+			IngredientsDatabase.ingredients_container.add_ingredient(item.id, 1)
 			
 	if item_amount <= 0:
 		disable_slot()
