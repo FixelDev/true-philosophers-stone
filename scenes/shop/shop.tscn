@@ -15,8 +15,9 @@ script = ExtResource("1_22a4g")
 shop_slot_amount = 4
 shop_slot_node = ExtResource("2_ms2w1")
 
-[node name="ExitButton" type="Button" parent="."]
-layout_mode = 1
+[node name="UI" parent="." instance=ExtResource("1_ctq1t")]
+
+[node name="ExitButton" type="Button" parent="UI"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -24,8 +25,6 @@ offset_left = -72.0
 offset_bottom = 72.0
 grow_horizontal = 0
 text = "Exit"
-
-[node name="UI" parent="." instance=ExtResource("1_ctq1t")]
 
 [node name="Table" type="ColorRect" parent="."]
 layout_mode = 1
@@ -50,4 +49,4 @@ offset_bottom = 111.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="UI/ExitButton" to="." method="_on_exit_button_pressed"]
