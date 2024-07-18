@@ -8,4 +8,3 @@
 [node name="RecipesDatabase" type="Node"]
 script = ExtResource("1_dceee")
 recipes = Array[Resource("res://recipes/recipe.gd")]([ExtResource("2_4h7f2"), ExtResource("3_7w6wg"), ExtResource("4_3n2h5")])
-unlocked_recipe_ids = Array[String](["fireball", "water_splash", "fire_rain"])

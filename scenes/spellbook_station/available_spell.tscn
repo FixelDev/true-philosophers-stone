@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmq17p6cj24ej"]
+
+[ext_resource type="Script" path="res://scenes/spellbook_station/available_spell.gd" id="1_quhc4"]
+
+[node name="AvailableSpell" type="Button"]
+script = ExtResource("1_quhc4")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

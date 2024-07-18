@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://c67ufxcoe5fvh"]
+
+[ext_resource type="Script" path="res://scenes/spellbook_station/spellbook_slot.gd" id="1_url2p"]
+
+[node name="SpellbookSlot" type="ColorRect"]
+custom_minimum_size = Vector2(100, 0)
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_url2p")
+
+[node name="RemoveButton" type="Button" parent="."]
+visible = false
+layout_mode = 1
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 12.0
+offset_bottom = 12.0
+text = "x"
+
+[node name="SpellNameText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="RemoveButton" to="." method="_on_remove_button_pressed"]

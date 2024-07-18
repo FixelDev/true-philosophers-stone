@@ -6,4 +6,7 @@
 
 [node name="SpellDatabase" type="Node"]
 script = ExtResource("1_mc7uw")
-spell_scenes = Array[PackedScene]([ExtResource("2_1tabq"), ExtResource("3_b3diy")])
+spells = {
+"fireball": ExtResource("2_1tabq"),
+"water_splash": ExtResource("3_b3diy")
+}

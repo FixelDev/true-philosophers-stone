@@ -8,6 +8,7 @@ var equiped_spell: Spell
 
 
 func _ready() -> void:
+	spellbook.add_equiped_spells()
 	spells_amount = spellbook.get_spells_amount()
 	equip_spell()
 

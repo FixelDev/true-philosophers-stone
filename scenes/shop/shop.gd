@@ -28,6 +28,9 @@ func create_shop_slots():
 func randomize_recipe() -> void:
 	var randomized_recipe: Recipe
 	
+	if RecipesDatabase.are_all_recipes_unclocked():
+		return
+	
 	while true:
 		randomized_recipe = RecipesDatabase.get_random_recipe()
 	

@@ -32,3 +32,7 @@ func unlock_recipe(id: String) -> void:
 	
 func _on_recipe_bought(id: String):
 	unlock_recipe(id)
+
+
+func are_all_recipes_unclocked() -> bool:
+	return unlocked_recipe_ids.size() == recipes.size()
