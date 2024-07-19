@@ -1,48 +1,30 @@
-[gd_scene load_steps=17 format=3 uid="uid://nupdqklqd347"]
+[gd_scene load_steps=4 format=3 uid="uid://nupdqklqd347"]
 
-[ext_resource type="Script" path="res://scenes/dungeon/dungeon_spawner.gd" id="1_rfd77"]
-[ext_resource type="PackedScene" uid="uid://bgxhdf4epkmnu" path="res://scenes/dungeon/room/room_bl.tscn" id="2_mxrb8"]
-[ext_resource type="PackedScene" uid="uid://dpxqm76yvxreb" path="res://scenes/dungeon/room/room_rb.tscn" id="3_ow7mr"]
-[ext_resource type="PackedScene" uid="uid://dsd6h45myqm8" path="res://scenes/dungeon/room/room_rbl.tscn" id="4_fp4ai"]
-[ext_resource type="PackedScene" uid="uid://df2ypnfpk5f20" path="res://scenes/dungeon/room/room_tbl.tscn" id="5_4b3l2"]
-[ext_resource type="PackedScene" uid="uid://b62bcednbkc3b" path="res://scenes/dungeon/room/room_tl.tscn" id="6_nwohi"]
-[ext_resource type="PackedScene" uid="uid://beta1ttqf8ong" path="res://scenes/dungeon/room/room_tr.tscn" id="7_xt8mc"]
-[ext_resource type="PackedScene" uid="uid://b3ewxgdeo4r4b" path="res://scenes/dungeon/room/room_trb.tscn" id="8_g2xac"]
-[ext_resource type="PackedScene" uid="uid://dio5xsoxbl2ln" path="res://scenes/dungeon/room/room_trbl.tscn" id="9_wjrrw"]
-[ext_resource type="PackedScene" uid="uid://8b4k37m864cm" path="res://scenes/dungeon/room/room_trl.tscn" id="10_jkvd0"]
-[ext_resource type="PackedScene" uid="uid://b1tya0avbix4y" path="res://scenes/dungeon/room/room_b.tscn" id="11_6qa81"]
-[ext_resource type="PackedScene" uid="uid://klcn3dvhijdj" path="res://scenes/dungeon/room/room_l.tscn" id="12_0q1ef"]
-[ext_resource type="PackedScene" uid="uid://c143v0kiejxq6" path="res://scenes/dungeon/room/room_t.tscn" id="13_7laq3"]
-[ext_resource type="PackedScene" uid="uid://t4r7psitgr5c" path="res://scenes/dungeon/room/room_r.tscn" id="14_65drp"]
-[ext_resource type="PackedScene" uid="uid://duej2kvyw2fup" path="res://scenes/dungeon/room/room_rl.tscn" id="15_e3kn7"]
-[ext_resource type="PackedScene" uid="uid://d0nwy02hc3y5x" path="res://scenes/dungeon/room/room_tb.tscn" id="16_pfbxg"]
+[ext_resource type="Script" path="res://scenes/dungeon/grid_spawner.gd" id="1_wky1k"]
+[ext_resource type="PackedScene" uid="uid://roqlrlkadytg" path="res://scenes/dungeon/room/room.tscn" id="2_lwc1g"]
+[ext_resource type="PackedScene" uid="uid://bhk8drb6381j7" path="res://scenes/entities/player/player.tscn" id="17_m8bow"]
 
 [node name="Dungeon" type="Node2D"]
 
 [node name="DungeonSpawner" type="Node2D" parent="."]
-script = ExtResource("1_rfd77")
+
+[node name="GridSpawner" type="Node2D" parent="DungeonSpawner"]
+unique_name_in_owner = true
+script = ExtResource("1_wky1k")
 dungeon_width = 10
 dungeon_height = 10
 rooms_amount = 15
 chances_of_ending_branch = 0.6
-room_scenes = {
-"b": ExtResource("11_6qa81"),
-"bl": ExtResource("2_mxrb8"),
-"l": ExtResource("12_0q1ef"),
-"r": ExtResource("14_65drp"),
-"rb": ExtResource("3_ow7mr"),
-"rbl": ExtResource("4_fp4ai"),
-"rl": ExtResource("15_e3kn7"),
-"t": ExtResource("13_7laq3"),
-"tb": ExtResource("16_pfbxg"),
-"tbl": ExtResource("5_4b3l2"),
-"tl": ExtResource("6_nwohi"),
-"tr": ExtResource("7_xt8mc"),
-"trb": ExtResource("8_g2xac"),
-"trbl": ExtResource("9_wjrrw"),
-"trl": ExtResource("10_jkvd0")
-}
+room_scene = ExtResource("2_lwc1g")
+
+[node name="RoomSceneSpawner" type="Node2D" parent="DungeonSpawner"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(111, 94)
+position = Vector2(108, 81)
 zoom = Vector2(4.11, 4.11)
+
+[node name="Player" parent="." instance=ExtResource("17_m8bow")]
+position = Vector2(55, 70)
+
+[node name="RoomsHolder" type="Node2D" parent="."]
+unique_name_in_owner = true

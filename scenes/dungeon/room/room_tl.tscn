@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b62bcednbkc3b"]
 
-[ext_resource type="PackedScene" uid="uid://roqlrlkadytg" path="res://scenes/dungeon/room/room_base.tscn" id="1_qir72"]
+[ext_resource type="PackedScene" uid="uid://roqlrlkadytg" path="res://scenes/dungeon/room/room.tscn" id="1_qir72"]
 
 [node name="Room_TL" instance=ExtResource("1_qir72")]
 
