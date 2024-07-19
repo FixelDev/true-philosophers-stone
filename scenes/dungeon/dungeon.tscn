@@ -8,7 +8,7 @@
 
 [node name="DungeonSpawner" type="Node2D" parent="."]
 
-[node name="GridSpawner" type="Node2D" parent="DungeonSpawner"]
+[node name="GridSpawner" type="Node2D" parent="DungeonSpawner" node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
 script = ExtResource("1_wky1k")
 dungeon_width = 10
@@ -16,15 +16,16 @@ dungeon_height = 10
 rooms_amount = 15
 chances_of_ending_branch = 0.6
 room_scene = ExtResource("2_lwc1g")
+player = NodePath("../../Player")
 
 [node name="RoomSceneSpawner" type="Node2D" parent="DungeonSpawner"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(108, 81)
-zoom = Vector2(4.11, 4.11)
-
-[node name="Player" parent="." instance=ExtResource("17_m8bow")]
-position = Vector2(55, 70)
+zoom = Vector2(5.73, 5.73)
 
 [node name="RoomsHolder" type="Node2D" parent="."]
 unique_name_in_owner = true
+
+[node name="Player" parent="." instance=ExtResource("17_m8bow")]
+position = Vector2(55, 70)

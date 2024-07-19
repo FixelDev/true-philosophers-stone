@@ -84,6 +84,7 @@ rotation = -4.71238
 corresponding_neighbor_dir = "r"
 
 [node name="RoomSpawnPointsHolder" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [node name="t" type="Marker2D" parent="RoomSpawnPointsHolder"]
 position = Vector2(0, -128)
