@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://duej2kvyw2fup"]
+
+[ext_resource type="PackedScene" uid="uid://roqlrlkadytg" path="res://scenes/dungeon/room/room_base.tscn" id="1_5qeaw"]
+
+[node name="Room_RL" instance=ExtResource("1_5qeaw")]
+
+[node name="Sprite2D" parent="." index="0"]
+region_rect = Rect2(64, 16, 16, 16)

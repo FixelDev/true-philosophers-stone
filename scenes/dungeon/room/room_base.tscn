@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://roqlrlkadytg"]
+
+[ext_resource type="Texture2D" uid="uid://xt8yfixkaty3" path="res://scenes/dungeon/room/rooms.png" id="1_kcf3n"]
+
+[node name="RoomBase" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kcf3n")
+region_enabled = true
