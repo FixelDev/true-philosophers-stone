@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Player
 
-const SPEED: float = 300.0
+const SPEED: float = 100.0
 var current_x_velocity: float = velocity.x
 var current_y_velocity: float = velocity.y
 

@@ -29,3 +29,17 @@ func get_direction_id(pos: Vector2) -> String:
 			id = "l"
 			
 	return id
+	
+func get_direction_by_id(id: String) -> Vector2:
+	var direction: Vector2
+	
+	match id:
+		"t":
+			direction = Vector2.UP
+		"r":
+			direction = Vector2.RIGHT
+		"b":
+			direction = Vector2.DOWN
+		"l":
+			direction = Vector2.LEFT
+	return direction

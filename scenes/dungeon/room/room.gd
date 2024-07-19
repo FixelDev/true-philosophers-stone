@@ -15,3 +15,21 @@ func change_position(new_pos: Vector2) -> void:
 
 func get_room_spawn_point_position(direction_id: String) -> Vector2:
 	return get_node("RoomSpawnPointsHolder/" + direction_id).global_position
+	
+
+func enable_door(direction_id: String) -> void:
+	for door in %DoorsHolder.get_children():
+		if door.corresponding_neighbor_dir == direction_id:
+			door.enable()
+
+
+func get_player_spawn_position(direction_id: String) -> Vector2:
+	for door in %DoorsHolder.get_children():
+		if door.corresponding_neighbor_dir == direction_id:
+			return door.get_player_spawn_point()
+			
+	return Vector2.ZERO
+
+
+func _on_player_entered_door(direction_id: String) -> void:
+	pass

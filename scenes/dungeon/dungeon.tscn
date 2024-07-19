@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://nupdqklqd347"]
+[gd_scene load_steps=5 format=3 uid="uid://nupdqklqd347"]
 
-[ext_resource type="Script" path="res://scenes/dungeon/grid_spawner.gd" id="1_wky1k"]
+[ext_resource type="Script" path="res://scenes/dungeon/dungeon.gd" id="1_a3ujj"]
+[ext_resource type="Script" path="res://scenes/dungeon/dungeon_spawner.gd" id="1_wky1k"]
 [ext_resource type="PackedScene" uid="uid://roqlrlkadytg" path="res://scenes/dungeon/room/room.tscn" id="2_lwc1g"]
 [ext_resource type="PackedScene" uid="uid://bhk8drb6381j7" path="res://scenes/entities/player/player.tscn" id="17_m8bow"]
 
-[node name="Dungeon" type="Node2D"]
+[node name="Dungeon" type="Node2D" node_paths=PackedStringArray("player", "camera")]
+script = ExtResource("1_a3ujj")
+player = NodePath("Player")
+camera = NodePath("Camera2D")
 
 [node name="DungeonSpawner" type="Node2D" parent="."]
-
-[node name="GridSpawner" type="Node2D" parent="DungeonSpawner" node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
 script = ExtResource("1_wky1k")
 dungeon_width = 10
@@ -16,9 +18,6 @@ dungeon_height = 10
 rooms_amount = 15
 chances_of_ending_branch = 0.6
 room_scene = ExtResource("2_lwc1g")
-player = NodePath("../../Player")
-
-[node name="RoomSceneSpawner" type="Node2D" parent="DungeonSpawner"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(108, 81)
@@ -29,3 +28,5 @@ unique_name_in_owner = true
 
 [node name="Player" parent="." instance=ExtResource("17_m8bow")]
 position = Vector2(55, 70)
+
+[connection signal="generation_finished" from="DungeonSpawner" to="." method="_on_dungeon_spawner_generation_finished"]

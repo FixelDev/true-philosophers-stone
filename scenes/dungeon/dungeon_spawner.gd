@@ -1,9 +1,8 @@
 extends Node2D
 
-class_name GridSpawner
+class_name DungeonSpawner
 
 @onready var rooms_holder = %RoomsHolder
-@onready var camera_2d = $"../../Camera2D"
 
 @export var dungeon_width: int
 @export var dungeon_height: int
@@ -11,6 +10,8 @@ class_name GridSpawner
 @export var chances_of_ending_branch: float
 @export var room_scene: PackedScene
 @export var player: Player
+
+signal generation_finished(dungeon_spawner: DungeonSpawner)
 
 var grid: Grid
 
@@ -21,10 +22,8 @@ func _ready() -> void:
 	place_rooms_on_grid()
 	grid.assign_neigbhors_to_rooms()
 	reposition_rooms()
+	generation_finished.emit(self)
 	
-	camera_2d.global_position = grid.get_grid_middle()
-	player.global_position = grid.get_grid_middle()
-
 func place_rooms_on_grid():
 	var origin_position: Vector2 = Vector2(int(dungeon_width / 2), int(dungeon_height / 2))
 	
@@ -71,12 +70,17 @@ func reposition_rooms() -> void:
 		var room_position: Vector2 = Vector2(room.x_pos, room.y_pos)
 		
 		for neighbor in room.neighbors:
-			if neighbor.room_scene.is_positioned:
-				continue
-			
 			var neighbor_position: Vector2 = Vector2(neighbor.x_pos, neighbor.y_pos)
 			var direction: Vector2 = (neighbor_position - room_position).normalized()
 			var direction_id = Globals.get_direction_id(direction)
+			
+			room.room_scene.enable_door(direction_id)
+			
+			if neighbor.room_scene.is_positioned:
+				continue
+			
+			
+			
 			var spawn_position = room.room_scene.get_room_spawn_point_position(direction_id)
 			
 			neighbor.room_scene.change_position(spawn_position)

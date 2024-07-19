@@ -7,12 +7,16 @@
 size = Vector2(16, 12)
 
 [node name="RoomDoor" type="Area2D"]
+visible = false
 position = Vector2(69, -11)
+collision_layer = 4
 script = ExtResource("1_tsgyo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="EnterArea" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_v8prh")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_elhyn")
@@ -21,3 +25,5 @@ region_rect = Rect2(16, 48, 16, 8)
 
 [node name="PlayerSpawnPoint" type="Marker2D" parent="."]
 position = Vector2(0, 22)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
