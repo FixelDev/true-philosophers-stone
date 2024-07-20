@@ -2,6 +2,8 @@ extends Node2D
 
 class_name Room
 
+@export var exit_hatch: ExitHatch
+
 @onready var room_spawn_points_holder = %RoomSpawnPointsHolder
 
 var is_positioned: bool = false
@@ -29,6 +31,11 @@ func get_player_spawn_position(direction_id: String) -> Vector2:
 			return door.get_player_spawn_point()
 			
 	return Vector2.ZERO
+
+
+func enable_exit_hatch() -> void:
+	exit_hatch.visible = true
+	exit_hatch.get_node("EnterArea").disabled = false
 
 
 func _on_player_entered_door(direction_id: String) -> void:

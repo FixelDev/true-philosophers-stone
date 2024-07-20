@@ -54,7 +54,8 @@ func place_rooms_on_grid():
 		
 		if generated_rooms >= (rooms_amount - 1):
 			break
-
+	
+	grid.rooms[randi_range(7, grid.rooms.size() - 1)].set_as_exit_room()
 
 func get_next_position(origin_position: Vector2) -> Vector2:
 	var direction: Vector2 = Globals.DIRECTIONS.pick_random()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://roqlrlkadytg"]
+[gd_scene load_steps=7 format=3 uid="uid://roqlrlkadytg"]
 
 [ext_resource type="Script" path="res://scenes/dungeon/room/room.gd" id="1_h7wlk"]
 [ext_resource type="Texture2D" uid="uid://b4s4omovqtc3n" path="res://scenes/dungeon/room/rooms_spritesheet.png" id="1_soe6j"]
 [ext_resource type="PackedScene" uid="uid://bf8norsymi3b1" path="res://scenes/dungeon/room/room_door.tscn" id="2_xhxc8"]
+[ext_resource type="PackedScene" uid="uid://bnk0b67w37i4a" path="res://scenes/dungeon/room/exit_hatch.tscn" id="4_ph10a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gr2jb"]
 resource_name = "room_tileset"
@@ -48,8 +49,9 @@ physics_layer_0/collision_layer = 16
 physics_layer_0/collision_mask = 35
 sources/0 = SubResource("TileSetAtlasSource_gr2jb")
 
-[node name="Room" type="Node2D"]
+[node name="Room" type="Node2D" node_paths=PackedStringArray("exit_hatch")]
 script = ExtResource("1_h7wlk")
+exit_hatch = NodePath("ExitHatch")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-72, -40)
@@ -94,3 +96,5 @@ position = Vector2(0, 128)
 
 [node name="l" type="Marker2D" parent="RoomSpawnPointsHolder"]
 position = Vector2(-192, 0)
+
+[node name="ExitHatch" parent="." instance=ExtResource("4_ph10a")]

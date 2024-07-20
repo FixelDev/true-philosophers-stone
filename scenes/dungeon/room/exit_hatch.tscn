@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnk0b67w37i4a"]
+
+[ext_resource type="Texture2D" uid="uid://b4s4omovqtc3n" path="res://scenes/dungeon/room/rooms_spritesheet.png" id="1_8e8j4"]
+[ext_resource type="Script" path="res://scenes/dungeon/room/exit_hatch.gd" id="1_sqefb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efguv"]
+size = Vector2(14, 12)
+
+[node name="ExitHatch" type="Area2D"]
+visible = false
+collision_layer = 4
+script = ExtResource("1_sqefb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8e8j4")
+region_enabled = true
+region_rect = Rect2(16, 64, 16, 16)
+
+[node name="EnterArea" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_efguv")
+disabled = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

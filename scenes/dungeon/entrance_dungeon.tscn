@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct8oxdkwglt51"]
+
+[ext_resource type="Script" path="res://scenes/dungeon/entrance_dungeon.gd" id="1_bo6pk"]
+[ext_resource type="Texture2D" uid="uid://b4s4omovqtc3n" path="res://scenes/dungeon/room/rooms_spritesheet.png" id="1_l8183"]
+[ext_resource type="PackedScene" uid="uid://nupdqklqd347" path="res://scenes/dungeon/dungeon.tscn" id="2_0groi"]
+[ext_resource type="PackedScene" uid="uid://wv18kjb7tnwi" path="res://scenes/dungeon/boss_room.tscn" id="3_fsp1p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lifo"]
+size = Vector2(12, 18)
+
+[node name="EntranceDungeon" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_bo6pk")
+dungeon_scene = ExtResource("2_0groi")
+boss_room_scene = ExtResource("3_fsp1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_l8183")
+region_enabled = true
+region_rect = Rect2(0, 64, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_6lifo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -23,6 +23,7 @@ RecipesDatabase="*res://recipes/recipes_database.tscn"
 SignalManager="*res://scripts/signal_manager.tscn"
 SceneManager="*res://scenes/scene_manager.tscn"
 SpellDatabase="*res://scenes/spells/spell_database.tscn"
+LevelManager="*res://scenes/level_manager.tscn"
 
 [input]
 
