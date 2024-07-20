@@ -6,7 +6,8 @@ class_name DungeonSpawner
 
 @export var dungeon_width: int
 @export var dungeon_height: int
-@export var rooms_amount: int
+@export var max_rooms_amount: int
+@export var min_rooms_amount: int
 @export var chances_of_ending_branch: float
 @export var room_scene: PackedScene
 @export var player: Player
@@ -14,9 +15,10 @@ class_name DungeonSpawner
 signal generation_finished(dungeon_spawner: DungeonSpawner)
 
 var grid: Grid
-
+var rooms_amount
 
 func _ready() -> void:
+	rooms_amount = randi_range(min_rooms_amount, max_rooms_amount)
 	grid = Grid.new(dungeon_width, dungeon_height)
 	
 	place_rooms_on_grid()
@@ -55,7 +57,7 @@ func place_rooms_on_grid():
 		if generated_rooms >= (rooms_amount - 1):
 			break
 	
-	grid.rooms[randi_range(7, grid.rooms.size() - 1)].set_as_exit_room()
+	grid.rooms[randi_range(rooms_amount - 5, grid.rooms.size() - 1)].set_as_exit_room()
 
 func get_next_position(origin_position: Vector2) -> Vector2:
 	var direction: Vector2 = Globals.DIRECTIONS.pick_random()

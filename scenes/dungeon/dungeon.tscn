@@ -15,7 +15,8 @@ unique_name_in_owner = true
 script = ExtResource("1_wky1k")
 dungeon_width = 10
 dungeon_height = 10
-rooms_amount = 15
+max_rooms_amount = 18
+min_rooms_amount = 10
 chances_of_ending_branch = 0.6
 room_scene = ExtResource("2_lwc1g")
 
