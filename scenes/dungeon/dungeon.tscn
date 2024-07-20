@@ -19,8 +19,8 @@ max_rooms_amount = 18
 min_rooms_amount = 10
 chances_of_ending_branch = 0.6
 room_scene = ExtResource("2_lwc1g")
-treasure_rooms_percentage = 0.2
-danger_rooms_percentage = 0.6
+treasure_rooms_percentage = 0.1
+danger_rooms_percentage = 0.9
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(108, 81)

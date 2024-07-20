@@ -23,13 +23,12 @@ func change_cell_type(new_type: CellType) -> void:
 func change_room_type(new_type: Room.RoomType) -> void:
 	room_scene.change_room_type(new_type)
 
-
 func assign_neighbor(neighbor: Cell) -> void:
 	neighbors.append(neighbor)
 
 
 func set_as_exit_room() -> void:
-	room_scene.enable_exit_hatch()
+	room_scene.set_as_exit_room()
 
 
 func on_player_entered() -> void:

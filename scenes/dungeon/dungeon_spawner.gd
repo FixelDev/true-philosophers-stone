@@ -73,7 +73,7 @@ func set_room_types() -> void:
 	var danger_rooms_amount: int = (rooms_amount - 1) * danger_rooms_percentage
 	
 	var rooms_copy = grid.rooms.duplicate(false)
-	rooms_copy.remove_at(0)
+	rooms_copy.pop_front()
 	
 	for i in range(treasure_rooms_amount):
 		var random_index = randi_range(0, rooms_copy.size() - 1)
@@ -86,7 +86,6 @@ func set_room_types() -> void:
 		
 		rooms_copy[random_index].change_room_type(Room.RoomType.DANGER_ROOM)
 		rooms_copy.remove_at(random_index)
-
 
 func get_next_position(origin_position: Vector2) -> Vector2:
 	var direction: Vector2 = Globals.DIRECTIONS.pick_random()

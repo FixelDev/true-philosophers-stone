@@ -100,3 +100,51 @@ position = Vector2(0, 128)
 position = Vector2(-192, 0)
 
 [node name="ExitHatch" parent="." instance=ExtResource("4_ph10a")]
+
+[node name="EnemySpawnPointsHolder" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="SpawnPoint" type="Marker2D" parent="EnemySpawnPointsHolder"]
+position = Vector2(-48, -25)
+
+[node name="SpawnPoint2" type="Marker2D" parent="EnemySpawnPointsHolder"]
+position = Vector2(-50, 15)
+
+[node name="SpawnPoint3" type="Marker2D" parent="EnemySpawnPointsHolder"]
+position = Vector2(-30, -21)
+
+[node name="SpawnPoint4" type="Marker2D" parent="EnemySpawnPointsHolder"]
+position = Vector2(-52, -6)
+
+[node name="SpawnPoint5" type="Marker2D" parent="EnemySpawnPointsHolder"]
+position = Vector2(33, -17)
+
+[node name="SpawnPoint6" type="Marker2D" parent="EnemySpawnPointsHolder"]
+position = Vector2(20, 14)
+
+[node name="SpawnPoint7" type="Marker2D" parent="EnemySpawnPointsHolder"]
+position = Vector2(-6, -22)
+
+[node name="SpawnPoint14" type="Marker2D" parent="EnemySpawnPointsHolder"]
+position = Vector2(1, 1)
+
+[node name="SpawnPoint15" type="Marker2D" parent="EnemySpawnPointsHolder"]
+position = Vector2(52, 3)
+
+[node name="SpawnPoint8" type="Marker2D" parent="EnemySpawnPointsHolder"]
+position = Vector2(-17, 15)
+
+[node name="SpawnPoint9" type="Marker2D" parent="EnemySpawnPointsHolder"]
+position = Vector2(19, -32)
+
+[node name="SpawnPoint10" type="Marker2D" parent="EnemySpawnPointsHolder"]
+position = Vector2(54, 18)
+
+[node name="SpawnPoint11" type="Marker2D" parent="EnemySpawnPointsHolder"]
+position = Vector2(12, -17)
+
+[node name="SpawnPoint12" type="Marker2D" parent="EnemySpawnPointsHolder"]
+position = Vector2(-22, -3)
+
+[node name="SpawnPoint13" type="Marker2D" parent="EnemySpawnPointsHolder"]
+position = Vector2(57, -23)

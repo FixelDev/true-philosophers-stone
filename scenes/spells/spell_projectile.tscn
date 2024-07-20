@@ -4,7 +4,7 @@
 
 [node name="SpellProjectile" type="Area2D"]
 collision_layer = 32
-collision_mask = 16
+collision_mask = 18
 script = ExtResource("1_rfo1g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
