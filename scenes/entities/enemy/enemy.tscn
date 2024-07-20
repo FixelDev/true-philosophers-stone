@@ -1,15 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgvjwrg1ad15l"]
+[gd_scene load_steps=8 format=3 uid="uid://bgvjwrg1ad15l"]
 
 [ext_resource type="Script" path="res://scenes/entities/enemy/enemy.gd" id="1_kocwd"]
 [ext_resource type="Texture2D" uid="uid://degodfcv1ifxt" path="res://scenes/entities/enemies_spritesheet.png" id="1_lvnlt"]
 [ext_resource type="PackedScene" uid="uid://o162ixew07fg" path="res://scenes/entities/movement/movement_towards_player.tscn" id="3_7jeic"]
+[ext_resource type="PackedScene" uid="uid://dy0tbyapjopac" path="res://scenes/entities/health_manager.tscn" id="4_1ekug"]
+[ext_resource type="PackedScene" uid="uid://b1bd6ogn2orna" path="res://scenes/entities/enemy/enemy_spell_manager.tscn" id="5_wo27n"]
+[ext_resource type="PackedScene" uid="uid://cs0l7q0psqxoo" path="res://scenes/spells/default_spell/default_spell.tscn" id="6_j8q8o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yc8bg"]
 radius = 8.06226
 
-[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("movement")]
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("movement", "health_manager")]
+collision_layer = 2
+collision_mask = 16
 script = ExtResource("1_kocwd")
 movement = NodePath("MovementTowardsPlayer")
+health_manager = NodePath("HealthManager")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_lvnlt")
@@ -20,3 +26,9 @@ region_rect = Rect2(0, 0, 16, 16)
 shape = SubResource("CircleShape2D_yc8bg")
 
 [node name="MovementTowardsPlayer" parent="." instance=ExtResource("3_7jeic")]
+
+[node name="HealthManager" parent="." instance=ExtResource("4_1ekug")]
+
+[node name="EnemySpellManager" parent="." instance=ExtResource("5_wo27n")]
+
+[node name="DefaultSpell" parent="EnemySpellManager" instance=ExtResource("6_j8q8o")]

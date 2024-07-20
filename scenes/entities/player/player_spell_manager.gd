@@ -38,4 +38,4 @@ func equip_spell() -> void:
 
 func handle_casting_spells() -> void:
 	if Input.is_action_just_pressed("cast_spell"):
-		equiped_spell.cast_spell()
+		equiped_spell.cast_spell(get_global_mouse_position())

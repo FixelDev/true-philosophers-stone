@@ -3,11 +3,14 @@ extends Node2D
 class_name Room
 
 @export var exit_hatch: ExitHatch
+@export var enemy_scene: PackedScene
 
 @onready var room_spawn_points_holder = %RoomSpawnPointsHolder
 
-var is_positioned: bool = false
+enum RoomType {NORMAL_ROOM, DANGER_ROOM, TREASURE_ROOM}
 
+var is_positioned: bool = false
+var room_type: RoomType = RoomType.NORMAL_ROOM
 
 
 func change_position(new_pos: Vector2) -> void:
@@ -38,5 +41,19 @@ func enable_exit_hatch() -> void:
 	exit_hatch.get_node("EnterArea").disabled = false
 
 
+func change_room_type(new_room_type: RoomType) -> void:
+	room_type = new_room_type
+
+
 func _on_player_entered_door(direction_id: String) -> void:
 	pass
+
+
+func on_player_entered_room() -> void:
+	if room_type == RoomType.DANGER_ROOM:
+		var enemy = enemy_scene.instantiate()
+		call_deferred("add_child", enemy)
+	elif room_type == RoomType.TREASURE_ROOM:
+		print("There is a chest")
+	else:
+		print("Empty room")

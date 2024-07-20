@@ -37,6 +37,8 @@ func _on_player_entered_dungeon_door(direction_id: String) -> void:
 	var player_spawn_position: Vector2 = next_room.room_scene.get_player_spawn_position(fliped_direction_id)
 	player.global_position = player_spawn_position
 	
+	next_room.on_player_entered()
+	
 	var camera_tween = get_tree().create_tween()
 	camera_tween.tween_property(camera, "global_position", next_room.room_scene.global_position, 0.3).set_trans(Tween.TRANS_CUBIC)
 	

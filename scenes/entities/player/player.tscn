@@ -10,7 +10,7 @@
 radius = 8.60233
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-collision_mask = 30
+collision_mask = 28
 script = ExtResource("1_y5i55")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -22,7 +22,7 @@ texture = ExtResource("2_vww8g")
 [node name="PlayerSpellManager" type="Node2D" parent="."]
 script = ExtResource("3_34qf2")
 
-[node name="Spellbook" type="Node" parent="."]
+[node name="Spellbook" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("4_g5dfx")
 

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1bd6ogn2orna"]
+
+[ext_resource type="Script" path="res://scenes/entities/enemy/enemy_spell_manager.gd" id="1_cwcu5"]
+
+[node name="EnemySpellManager" type="Node2D"]
+script = ExtResource("1_cwcu5")

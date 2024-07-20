@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cs0l7q0psqxoo"]
+[gd_scene load_steps=5 format=3 uid="uid://cs0l7q0psqxoo"]
 
 [ext_resource type="PackedScene" uid="uid://csmohuvrc6ifj" path="res://scenes/spells/spell.tscn" id="1_telit"]
 [ext_resource type="Script" path="res://scenes/spells/default_spell/default_spell.gd" id="2_84ioy"]
+[ext_resource type="PackedScene" uid="uid://t8n4nlhmkw13" path="res://scenes/spells/default_spell/default_spell_projectile.tscn" id="3_fojgx"]
+[ext_resource type="Resource" uid="uid://cnhtj0b0dwf7k" path="res://scenes/spells/default_spell/default_spell.tres" id="4_ttw38"]
 
 [node name="DefaultSpell" instance=ExtResource("1_telit")]
 script = ExtResource("2_84ioy")
+spell_projectile_scene = ExtResource("3_fojgx")
+spell_stats = ExtResource("4_ttw38")
