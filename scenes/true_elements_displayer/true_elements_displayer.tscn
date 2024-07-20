@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://crv8r6hn2h1a5"]
+
+[ext_resource type="Script" path="res://scenes/true_elements_displayer/true_elements_displayer.gd" id="1_h8nb7"]
+
+[node name="TrueElementsDisplayer" type="Control" node_paths=PackedStringArray("true_elements_holder")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h8nb7")
+true_elements_holder = NodePath("CanvasLayer/TrueElementsHolder")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TrueElementsHolder" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+alignment = 1
+
+[node name="TrueFireImage" type="ColorRect" parent="CanvasLayer/TrueElementsHolder"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+color = Color(0.912828, 0.0592572, 0.29953, 1)
+
+[node name="TrueWaterImage" type="ColorRect" parent="CanvasLayer/TrueElementsHolder"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+color = Color(0.215686, 1, 1, 1)
+
+[node name="TrueAirImage" type="ColorRect" parent="CanvasLayer/TrueElementsHolder"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="TrueEarthImage" type="ColorRect" parent="CanvasLayer/TrueElementsHolder"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+color = Color(0.498265, 0.254077, 0.191211, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

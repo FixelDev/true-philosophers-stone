@@ -1,10 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://wv18kjb7tnwi"]
+[gd_scene load_steps=7 format=3 uid="uid://wv18kjb7tnwi"]
 
 [ext_resource type="PackedScene" uid="uid://roqlrlkadytg" path="res://scenes/dungeon/room/room.tscn" id="1_ii5mh"]
+[ext_resource type="Script" path="res://scenes/dungeon/boss_room.gd" id="1_ps0v4"]
+[ext_resource type="PackedScene" uid="uid://bhk8drb6381j7" path="res://scenes/entities/player/player.tscn" id="2_c0fm4"]
+[ext_resource type="PackedScene" uid="uid://crv8r6hn2h1a5" path="res://scenes/true_elements_displayer/true_elements_displayer.tscn" id="2_rqnc1"]
+[ext_resource type="Texture2D" uid="uid://b4s4omovqtc3n" path="res://scenes/dungeon/room/rooms_spritesheet.png" id="3_t1kbh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_owgl6"]
 
 [node name="BossRoom" type="Node2D"]
+script = ExtResource("1_ps0v4")
+true_elements_displayer_scene = ExtResource("2_rqnc1")
 
 [node name="Room" parent="." instance=ExtResource("1_ii5mh")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3.555, 3.555)
+
+[node name="Player" parent="." instance=ExtResource("2_c0fm4")]
+position = Vector2(-44, 26)
+
+[node name="TestExitArea" type="Area2D" parent="."]
+position = Vector2(22, -12)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestExitArea"]
+shape = SubResource("RectangleShape2D_owgl6")
+
+[node name="Sprite2D" type="Sprite2D" parent="TestExitArea"]
+texture = ExtResource("3_t1kbh")
+region_enabled = true
+region_rect = Rect2(16, 64, 16, 16)
+
+[connection signal="body_entered" from="TestExitArea" to="." method="_on_test_exit_area_body_entered"]

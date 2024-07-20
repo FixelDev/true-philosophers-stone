@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://bbahuw0arpnd"]
+
+[ext_resource type="Script" path="res://scenes/starting_level.gd" id="1_1y7ye"]
+[ext_resource type="PackedScene" uid="uid://caomwo0h5ydsq" path="res://scenes/ui/ui.tscn" id="1_m07hd"]
+[ext_resource type="PackedScene" uid="uid://bhk8drb6381j7" path="res://scenes/entities/player/player.tscn" id="1_qouyq"]
+[ext_resource type="PackedScene" uid="uid://c83g02tkliwap" path="res://scenes/entities/entrance.tscn" id="3_h1i8t"]
+[ext_resource type="PackedScene" uid="uid://c3ymcumcpvkko" path="res://scenes/shop/shop.tscn" id="4_4np07"]
+[ext_resource type="PackedScene" uid="uid://cososf1t7dm8" path="res://scenes/cauldron/cauldron.tscn" id="5_2nha2"]
+[ext_resource type="PackedScene" uid="uid://dumbs7gggw1ky" path="res://scenes/spellbook_station/spellbook_station.tscn" id="6_bpalt"]
+[ext_resource type="PackedScene" uid="uid://ct8oxdkwglt51" path="res://scenes/dungeon/entrance_dungeon.tscn" id="8_wfy77"]
+
+[node name="StartingLevel" type="Node2D" node_paths=PackedStringArray("entrance_shop")]
+script = ExtResource("1_1y7ye")
+entrance_shop = NodePath("EntranceShop")
+
+[node name="UI" parent="." instance=ExtResource("1_m07hd")]
+
+[node name="Player" parent="." instance=ExtResource("1_qouyq")]
+position = Vector2(516, 321)
+
+[node name="EntranceShop" parent="." instance=ExtResource("3_h1i8t")]
+position = Vector2(123, 207)
+scene_to_load = ExtResource("4_4np07")
+
+[node name="EntranceCauldron" parent="." instance=ExtResource("3_h1i8t")]
+position = Vector2(789, 200)
+scene_to_load = ExtResource("5_2nha2")
+
+[node name="EntranceSpellbookStation" parent="." instance=ExtResource("3_h1i8t")]
+position = Vector2(789, 464)
+scene_to_load = ExtResource("6_bpalt")
+
+[node name="EntranceDungeon" parent="." instance=ExtResource("8_wfy77")]
+position = Vector2(418, 323)
+
+[connection signal="body_entered" from="EntranceShop" to="EntranceShop" method="_on_body_entered"]
+[connection signal="body_entered" from="EntranceCauldron" to="EntranceCauldron" method="_on_body_entered"]
+[connection signal="body_entered" from="EntranceSpellbookStation" to="EntranceSpellbookStation" method="_on_body_entered"]
